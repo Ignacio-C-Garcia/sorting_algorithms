@@ -6,8 +6,9 @@ int aux = 0;
 
 if (!array)
 return;
-
-for (index = 0; index < size - 1; index++)
+if (size == 0)
+return;
+for (index = 0; index + 1 < size; index++)
 {
 if (array[index] > array[index + 1])
 {
