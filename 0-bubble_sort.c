@@ -1,13 +1,15 @@
 #include "sort.h"
+/**
+ * bubble_sort - sorts an array
+ * @array: an array of integers
+ * @size: size of the array
+ */
 void bubble_sort(int *array, size_t size)
 {
 size_t index = 0;
 int aux = 0;
 
-if (!array)
-return;
-if (size == 0)
-return;
+
 for (index = 0; index + 1 < size; index++)
 {
 if (array[index] > array[index + 1])
