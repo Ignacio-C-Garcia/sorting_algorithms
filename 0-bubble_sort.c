@@ -22,17 +22,6 @@ void bubble_sort(int *array, size_t size)
             }
             ii++;
         }
-        if (array[ii] > array[ii + 1])
-            {
-                aux = array[ii];
-                array[ii] = array[ii + 1];
-                array[ii + 1] = aux;
-                print_array(array, size);
-                len_line--;
-            }
-        else
-            len_line = len_line - 2;
-        ii++;
         i++;
     }
     
