@@ -1,45 +1,21 @@
 #include "sort.h"
 void bubble_sort(int *array, size_t size)
 {
-    size_t i = 0;
-    size_t ii = 0;
-    size_t len_line  = size;
-    int aux = 0;
+size_t index = 0;
+int aux = 0;
 
-    if (!array)
-        return;
+if (!array)
+return;
 
-    if (size == 1)
-    {
-        print_array(array, size);
-        return;
-    }
-
-    while (i < size - 1)
-    {
-        for (ii = 0; ii < len_line - 2;)
-        {
-            if (array[ii] > array[ii + 1])
-            {
-                aux = array[ii];
-                array[ii] = array[ii + 1];
-                array[ii + 1] = aux;
-                print_array(array, size);
-            }
-            ii++;
-        }
-        if (array[ii] > array[ii + 1])
-            {
-                aux = array[ii];
-                array[ii] = array[ii + 1];
-                array[ii + 1] = aux;
-                print_array(array, size);
-                len_line--;
-            }
-        else
-            len_line = len_line - 2;
-        ii++;
-        i++;
-    }
-    
+for (index = 0; index < size - 1; index++)
+{
+if (array[index] > array[index + 1])
+{
+aux = array[index];
+array[index] = array[index + 1];
+array[index + 1] = aux;
+print_array(array, size);
+bubble_sort(array, size);
+}
+}
 }
