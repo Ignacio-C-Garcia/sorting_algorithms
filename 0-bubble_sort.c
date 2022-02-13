@@ -8,7 +8,7 @@ void bubble_sort(int *array, size_t size)
 
     if (!array)
         return;
-    if (size != sizeof(array)/ sizeof(array[0]));
+    if (size != sizeof(*array)/ sizeof(array[0]))
         return;
 
     while (i < size - 1)
