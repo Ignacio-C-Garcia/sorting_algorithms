@@ -6,9 +6,15 @@
 void insertion_sort_list(listint_t **list)
 {
 
-    listint_t *head = (*list)->next;
-    listint_t *move = head->prev;
+    listint_t *head = NULL;
+    listint_t *move = NULL;
     listint_t *aux = NULL;
+
+    if ((*list)->next)
+    {
+        head = (*list)->next;
+        move = head->prev;
+    }
 
     while(move)
     {
