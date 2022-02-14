@@ -21,21 +21,22 @@ void insertion_sort_list(listint_t **list)
         {
             if (move->next)
                 move->next->prev = move->prev;
+
             if (move->prev->prev)
                 move->prev->prev->next = move;
 
-                aux = move->next;
+            aux = move->next;
 
-                move->next = move->prev;
-                move->prev->next = aux;
+            move->next = move->prev;
+            move->prev->next = aux;
 
-                aux = move->prev->prev;
-                move->prev->prev = move;
-                move->prev = aux;
+            aux = move->prev->prev;
+            move->prev->prev = move;
+            move->prev = aux;
 
-                if ((*list)->prev)
-                    *list = (*list)->prev;
-                print_list(*list);
+            if ((*list)->prev)
+                *list = (*list)->prev;
+            print_list(*list);
         }
         if (head)
             head = head->next;
