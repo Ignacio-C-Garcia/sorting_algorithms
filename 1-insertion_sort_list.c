@@ -5,12 +5,13 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-if (!list || !(*list))
-return;
 
 listint_t *head = NULL;
 listint_t *move = NULL;
 listint_t *aux = NULL;
+
+if (!list || !(*list))
+return;
 
 if ((*list)->next)
 {
