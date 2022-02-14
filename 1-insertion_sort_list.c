@@ -1,14 +1,11 @@
 #include "sort.h"
 /**
  * insertion_sort_list - sort a dll
- * @list: header of dll 
+ * @list: header of dll
  */
 void insertion_sort_list(listint_t **list)
 {
-
-listint_t *head = NULL;
-listint_t *move = NULL;
-listint_t *aux = NULL;
+listint_t *head = NULL, *move = NULL, *aux = NULL;
 
 if (!list || !(*list))
 return;
@@ -19,7 +16,7 @@ head = (*list)->next;
 move = head->prev;
 }
 
-while(move)
+while (move)
 {
 if (head == NULL)
 move = move->next;
@@ -33,12 +30,9 @@ move->next->prev = move->prev;
 
 if (move->prev->prev)
 move->prev->prev->next = move;
-
 aux = move->next;
-
 move->next = move->prev;
 move->prev->next = aux;
-
 aux = move->prev->prev;
 move->prev->prev = move;
 move->prev = aux;
@@ -50,6 +44,4 @@ print_list(*list);
 if (head)
 head = head->next;
 }
-
-
 }
